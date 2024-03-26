@@ -1,5 +1,6 @@
 const fs = require('fs');
-const resultFile = 'aws-qa.json';
+const { v4: uuidv4 } = require('uuid');
+const resultFile = './src/aws-qa.json';
 
 function parseReadme(readmeContent) {
     const lines = readmeContent.split('\n');
@@ -12,15 +13,25 @@ function parseReadme(readmeContent) {
         if (line.startsWith("###")) {
             // Start of a new question
             if (currentQuestion.question) {
-                // Push the previous question before starting a new one
                 questions.push(currentQuestion);
             }
-            currentQuestion = { question: { text: line.slice(4).trim() }, answers: [] };
+            currentQuestion = {
+                id: uuidv4(),
+                question: {
+                    id: uuidv4(),
+                    text: line.slice(4).trim()
+                },
+                answers: []
+            };
         } else if (line.startsWith("- [")) {
             // Answer line
             const answerText = line.slice(line.indexOf("]") + 2).trim();
             const isCorrect = line.includes('[x]');
-            currentQuestion.answers.push({ text: answerText, isCorrect });
+            currentQuestion.answers.push({
+                id: uuidv4(),
+                text: answerText,
+                isCorrect
+            });
         }
     }
 
