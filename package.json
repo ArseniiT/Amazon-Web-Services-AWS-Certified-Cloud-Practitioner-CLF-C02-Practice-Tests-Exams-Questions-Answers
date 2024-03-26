@@ -1,0 +1,25 @@
+{
+  "name": "cloud-practitioner-clf-c02-practice-tests-exams-questions-answers",
+  "version": "1.0.0",
+  "description": "![Promotional image](images/promotional.png)",
+  "main": "index.js",
+  "scripts": {
+    "parse": "node readmeParser.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArseniiT/Amazon-Web-Services-AWS-Certified-Cloud-Practitioner-CLF-C02-Practice-Tests-Exams-Questions-Answers.git"
+  },
+  "keywords": [
+    "aws"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArseniiT/Amazon-Web-Services-AWS-Certified-Cloud-Practitioner-CLF-C02-Practice-Tests-Exams-Questions-Answers/issues"
+  },
+  "homepage": "https://github.com/ArseniiT/Amazon-Web-Services-AWS-Certified-Cloud-Practitioner-CLF-C02-Practice-Tests-Exams-Questions-Answers#readme",
+  "dependencies": {
+  }
+}
